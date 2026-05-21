@@ -28,9 +28,18 @@ canonical record of a single source. Scripts cite entries by ID (e.g. `[L-007]`)
 | [L-002](./L-002-baltes-1997-selective-optimization-with-compensation.md) | Baltes (1997). On the incomplete architecture of human ontogeny. *American Psychologist*, 52(4), 366–380. DOI [10.1037/0003-066X.52.4.366](https://doi.org/10.1037/0003-066X.52.4.366). | SOC, lifespan development |
 | [L-003](./L-003-formosa-2014-lifelong-learning-in-later-life.md) | Formosa (2014). Lifelong Learning in Later Life. In *Learning across Generations in Europe* (pp. 11–21). SensePublishers. DOI [10.1007/978-94-6209-902-9_2](https://doi.org/10.1007/978-94-6209-902-9_2). | geragogy, later-life learning |
 
+### Batch 02 — CREATE / Digital design for older adults (Part 2)
+
+| ID | Citation | Themes |
+|---|---|---|
+| [L-004](./L-004-czaja-2006-create-factors-predicting-technology-use.md) | Czaja, Charness, Fisk, Hertzog, Nair, Rogers & Sharit (2006). Factors predicting the use of technology: Findings from CREATE. *Psychology and Aging*, 21(2), 333–352. DOI [10.1037/0882-7974.21.2.333](https://doi.org/10.1037/0882-7974.21.2.333). | CREATE, technology use, predictors |
+| [L-005](./L-005-czaja-lee-2006-impact-of-aging-on-access-to-technology.md) | Czaja & Lee (2006). The impact of aging on access to technology. *Universal Access in the Information Society*, 5(4), 341–349. DOI [10.1007/s10209-006-0060-x](https://doi.org/10.1007/s10209-006-0060-x). | digital divide, access, equity |
+| [L-006](./L-006-charness-boot-2009-aging-and-information-technology-use.md) | Charness & Boot (2009). Aging and Information Technology Use. *Current Directions in Psychological Science*, 18(5), 253–258. DOI [10.1111/j.1467-8721.2009.01647.x](https://doi.org/10.1111/j.1467-8721.2009.01647.x). | aging, IT use, training |
+| [L-007](./L-007-czaja-2019-designing-for-older-adults-3e.md) | Czaja, Boot, Charness & Rogers (2019). *Designing for Older Adults* (3rd ed.). CRC Press. DOI [10.1201/b22189](https://doi.org/10.1201/b22189). | human factors, design handbook |
+| [L-008](./L-008-mclaughlin-pak-2020-designing-displays-for-older-adults-2e.md) | McLaughlin & Pak (2020). *Designing Displays for Older Adults* (2nd ed.). CRC Press. DOI [10.1201/9780429439674](https://doi.org/10.1201/9780429439674). | display design, perception, screens |
+
 ### Pending batches
 
-- Batch 02 — CREATE / digital design for older adults (Czaja, Rogers, Charness, Sharit)
 - Batch 03 — Technology acceptance for seniors (STAM — Renaud & van Biljon; revised TAM)
 - Batch 04 — Digital interaction and older adults (Loos, Fernández-Ardèvol, Sawchuk, Rosales)
 - Batch 05 — Accessibility for older adults (WCAG 2.2, Atkinson Hyperlegible evidence base)
