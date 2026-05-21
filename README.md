@@ -30,6 +30,15 @@ citation. No source enters the library without triple verification.
 The channel speaks to older adults (65+) in the United States who want to learn AI
 and Claude on their own terms. Caregivers and educators are not the primary audience.
 
+## Workflow rules
+
+Before contributing, read [`docs/workflow-rules.md`](./docs/workflow-rules.md).
+The headline rule:
+
+> When in doubt, check external sources. Don't guess. Don't rely on training
+> alone. Find at least three references, then proceed with the best-in-class
+> enterprise standard.
+
 ## Repo map
 
 | Path | What lives here |

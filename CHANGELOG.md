@@ -21,5 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dependabot configuration.
 - Architecture Decision Record 0001: runtime is GitHub Actions.
 - `docs/architecture.md` capturing Part 1 — the 720° pipeline blueprint.
+- `docs/workflow-rules.md` codifying the verify-before-deciding principle and
+  five companion rules; surfaced from `README.md`.
 
 [Unreleased]: https://github.com/smiles70/thewiserlearner/compare/HEAD...HEAD
