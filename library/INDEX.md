@@ -38,9 +38,17 @@ canonical record of a single source. Scripts cite entries by ID (e.g. `[L-007]`)
 | [L-007](./L-007-czaja-2019-designing-for-older-adults-3e.md) | Czaja, Boot, Charness & Rogers (2019). *Designing for Older Adults* (3rd ed.). CRC Press. DOI [10.1201/b22189](https://doi.org/10.1201/b22189). | human factors, design handbook |
 | [L-008](./L-008-mclaughlin-pak-2020-designing-displays-for-older-adults-2e.md) | McLaughlin & Pak (2020). *Designing Displays for Older Adults* (2nd ed.). CRC Press. DOI [10.1201/9780429439674](https://doi.org/10.1201/9780429439674). | display design, perception, screens |
 
+### Batch 03 — Technology acceptance for older adults (Part 2)
+
+| ID | Citation | Themes |
+|---|---|---|
+| [L-009](./L-009-renaud-vanbiljon-2008-stam.md) | Renaud & van Biljon (2008). Predicting technology acceptance and adoption by the elderly. *SAICSIT '08*, 210–219. DOI [10.1145/1456659.1456684](https://doi.org/10.1145/1456659.1456684). | STAM, foundations |
+| [L-010](./L-010-chen-chan-2014-stam-gerontechnology.md) | Chen & Chan (2014). Gerontechnology acceptance by elderly Hong Kong Chinese: STAM. *Ergonomics*, 57(5), 635–652. DOI [10.1080/00140139.2014.895855](https://doi.org/10.1080/00140139.2014.895855). | STAM, empirical validation |
+| [L-011](./L-011-mitzner-2010-older-adults-talk-technology.md) | Mitzner et al. (2010). Older adults talk technology. *Computers in Human Behavior*, 26(6), 1710–1721. DOI [10.1016/j.chb.2010.06.020](https://doi.org/10.1016/j.chb.2010.06.020). | attitudes, qualitative |
+| [L-012](./L-012-hauk-2018-meta-analysis-age-technology-acceptance.md) | Hauk, Hüffmeier & Krumm (2018). Meta-analysis on age and technology acceptance. *Computers in Human Behavior*, 84, 304–319. DOI [10.1016/j.chb.2018.01.020](https://doi.org/10.1016/j.chb.2018.01.020). | meta-analysis, TAM/UTAUT |
+
 ### Pending batches
 
-- Batch 03 — Technology acceptance for seniors (STAM — Renaud & van Biljon; revised TAM)
 - Batch 04 — Digital interaction and older adults (Loos, Fernández-Ardèvol, Sawchuk, Rosales)
 - Batch 05 — Accessibility for older adults (WCAG 2.2, Atkinson Hyperlegible evidence base)
 - Batch 06 — AI literacy and older adults (most recent, smallest evidence base)

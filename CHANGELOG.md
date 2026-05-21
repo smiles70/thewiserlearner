@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Library batch 03 — Technology acceptance for older adults (Part 2).** Four triple-verified entries:
+  - `L-009` Renaud & van Biljon (2008). Predicting technology acceptance and adoption by the elderly (STAM).
+  - `L-010` Chen & Chan (2014). Gerontechnology acceptance: STAM empirically validated.
+  - `L-011` Mitzner et al. (2010). Older adults talk technology.
+  - `L-012` Hauk, Hüffmeier & Krumm (2018). Meta-analysis on age and technology acceptance.
 - **Library batch 02 — CREATE / digital design for older adults (Part 2).** Five triple-verified entries:
   - `L-004` Czaja et al. (2006). Factors predicting the use of technology (CREATE).
   - `L-005` Czaja & Lee (2006). The impact of aging on access to technology.
