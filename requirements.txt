@@ -10,7 +10,7 @@ tenacity>=8.3,<9
 
 # Research / library
 crossref-commons>=0.0.7
-pyalex>=0.13,<0.14   # OpenAlex client
+pyalex>=0.21,<0.22   # OpenAlex client
 
 # Anthropic (Claude API)
 anthropic>=0.30,<1
