@@ -5,6 +5,7 @@ Usage:
 
 Prints a compact, copy-pastable verification record for each DOI.
 """
+
 from __future__ import annotations
 
 import json
@@ -31,12 +32,10 @@ def show(doi: str) -> None:
         print(f"  ERROR: {e}")
         return
     authors = "; ".join(
-        f"{a.get('family','')}, {a.get('given','')}".strip(", ")
-        for a in m.get("author", [])
+        f"{a.get('family', '')}, {a.get('given', '')}".strip(", ") for a in m.get("author", [])
     )
     editors = "; ".join(
-        f"{a.get('family','')}, {a.get('given','')}".strip(", ")
-        for a in m.get("editor", [])
+        f"{a.get('family', '')}, {a.get('given', '')}".strip(", ") for a in m.get("editor", [])
     )
     year = first(first(m.get("issued", {}).get("date-parts", [[None]])) or [None])
     print(f"  TITLE:   {first(m.get('title'))}")
@@ -45,7 +44,7 @@ def show(doi: str) -> None:
         print(f"  EDITORS: {editors}")
     print(f"  YEAR:    {year}")
     print(f"  VENUE:   {first(m.get('container-title'))}")
-    print(f"  VOL/ISS/PG: {m.get('volume','-')}/{m.get('issue','-')}/{m.get('page','-')}")
+    print(f"  VOL/ISS/PG: {m.get('volume', '-')}/{m.get('issue', '-')}/{m.get('page', '-')}")
     print(f"  PUB:     {m.get('publisher')}")
     print(f"  TYPE:    {m.get('type')}")
     print(f"  ISSN:    {m.get('ISSN')}")
