@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.python-version
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+client_secret*.json
+token*.json
+service-account*.json
+
+# Episode build artifacts (large binaries should not be committed)
+episodes/*/voice.wav
+episodes/*/voice.mp3
+episodes/*/captions.srt
+episodes/*/broll/
+episodes/*/final.mp4
+episodes/*/thumb.png
+
+# Analytics (SQLite is committed weekly via workflow, not on each change)
+analytics/perf.sqlite-journal
+analytics/perf.sqlite-wal
+analytics/perf.sqlite-shm
+
+# Library candidates (unverified, never tracked)
+library/_candidates/*
+!library/_candidates/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.windsurf/
+
+# Logs
+*.log
+logs/
+
+# Node (if any tooling sneaks in)
+node_modules/

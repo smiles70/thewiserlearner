@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thewiserlearner"
+version = "0.1.0"
+description = "Geragogy-governed YouTube production pipeline for Mynaani."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "BUSL-1.1" }
+authors = [{ name = "smiles70" }]
+keywords = ["geragogy", "youtube", "automation", "older-adults", "claude", "ai-literacy"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Homepage = "https://github.com/smiles70/thewiserlearner"
+Issues = "https://github.com/smiles70/thewiserlearner/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pipeline*", "mcp*"]
+exclude = ["tests*", "episodes*", "library*", "contract*", "docs*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["episodes", "library", "contract", "docs"]
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W",  # pycodestyle + pyflakes
+    "I",            # isort
+    "B",            # bugbear
+    "UP",           # pyupgrade
+    "SIM",          # simplify
+    "RUF",          # ruff-specific
+]
+ignore = ["E501"]  # line length handled by formatter
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra --strict-markers --strict-config"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.coverage.run]
+branch = true
+source = ["pipeline", "mcp"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

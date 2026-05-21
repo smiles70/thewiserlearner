@@ -1,0 +1,21 @@
+# Normalize line endings
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Mark binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary
+*.mp3 binary
+*.wav binary
+*.pdf binary
+*.sqlite binary
+*.woff2 binary
+*.ttf binary
+
+# Linguist hints
+docs/** linguist-documentation
+library/** linguist-documentation
+contract/** linguist-documentation

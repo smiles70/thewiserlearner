@@ -1,0 +1,47 @@
+name: Library Verify
+
+# Weekly sweep: re-verifies every library entry is still reachable and that its
+# DOI / first author / year still match across OpenAlex and Crossref.
+#
+# The actual verification script (pipeline/library_verify.py) is delivered in Part 5.
+# Until then this workflow is a placeholder that succeeds and reminds us it ran.
+
+on:
+  schedule:
+    # Mondays 09:00 UTC.
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify:
+    name: Verify library sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run library verifier (placeholder)
+        run: |
+          if [ -f pipeline/library_verify.py ]; then
+            python pipeline/library_verify.py
+          else
+            echo "library_verify.py not yet implemented (arrives in Part 5)."
+            echo "Library entries committed: $(find library -name 'L-*.md' 2>/dev/null | wc -l)"
+          fi

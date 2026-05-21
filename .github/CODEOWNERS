@@ -1,0 +1,9 @@
+# Default owner for everything.
+* @smiles70
+
+# Library and contract are the highest-stakes paths.
+/library/   @smiles70
+/contract/  @smiles70
+
+# CI and security tooling.
+/.github/   @smiles70
