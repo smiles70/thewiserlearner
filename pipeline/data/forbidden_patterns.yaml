@@ -1,0 +1,60 @@
+# Forbidden surface-form patterns (case-insensitive substring match).
+# Source of truth for both `pipeline/audit.py` and `contract/audit-rubric.md`.
+# Any change here must be mirrored in the rubric within the same PR.
+#
+# Each entry maps a contract clause to a list of forbidden substrings.
+
+C-4.1:  # Ageist framing
+  - "for seniors"
+  - "for the elderly"
+  - "elderly people"
+  - "despite your age"
+  - "back in your day"
+  - "kids these days"
+  - "tech-savvy youngsters"
+  - "old-fashioned"
+  - "even your grandparents"
+  - "old timer"
+
+C-4.2:  # Deficit framing
+  - "if you struggle with"
+  - "for those who find it hard"
+  - "if you're nervous about"
+  - "if computers scare you"
+  - "if technology intimidates"
+
+C-4.3:  # Caregiver-redirected address
+  - "ask your grandchild"
+  - "have someone younger"
+  - "get a young person"
+  - "ask a kid"
+  - "have a relative"
+
+C-4.4:  # Reassurance theatre
+  - "don't worry"
+  - "anyone can do this"
+  - "it's so easy"
+  - "it's really simple"
+  - "nothing to be afraid of"
+  - "nothing to fear"
+
+C-4.5:  # Fear, urgency, scarcity
+  - "before it's too late"
+  - "while you still can"
+  - "everyone is using"
+  - "left behind"
+  - "fall behind"
+  - "the future is here"
+  - "don't get left"
+
+C-4.6:  # Discovery-style instruction
+  - "have a look around"
+  - "explore the menu"
+  - "see what you can find"
+  - "play around with"
+  - "just experiment"
+
+C-4.12:  # Address register
+  - "you guys"
+  - "you folks at home"
+  - "hey folks"

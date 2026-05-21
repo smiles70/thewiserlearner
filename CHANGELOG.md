@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Pipeline scaffold v0.1.0 (Part 5).** Working contract auditor plus interface stubs for the rest of the pipeline:
+  - `pipeline/audit.py` — deterministic checks for clauses C-1, C-3, C-4, C-9. 11 unit tests pass.
+  - `pipeline/data/forbidden_patterns.yaml` — canonical machine-readable forbidden-phrase list (mirror of `contract/audit-rubric.md` §C-4).
+  - `pipeline/cli.py` — `python -m pipeline.cli audit <script.md>` entry point; `tts`, `captions`, `composite`, `publish` subcommands stubbed.
+  - `pipeline/run_episode.py` — orchestrator; failing audit blocks the rest of the pipeline.
+  - `pipeline/tts.py`, `pipeline/captions.py`, `pipeline/compositor.py`, `pipeline/youtube.py` — typed interface stubs for downstream parts.
+  - `agents/` — markdown specifications for scripter, auditor, researcher, voice-director, visual-director, captioner, compositor, seo, publisher, analyst.
+  - `skills/contract-audit/` and `skills/library-verify/` — Claude skill stubs.
+  - `mcp/README.md` — planned MCP servers (library, contract, youtube).
+  - `episodes/_template/script.md` — script template conforming to the audit input schema.
+  - `tests/test_audit.py`, `tests/test_forbidden_patterns.py` — 11 tests covering good/bad scripts and rubric integrity.
 - **Library batch 04 — Digital interaction and older adults (Part 2).** Four triple-verified entries:
   - `L-013` Pradhan, Lazar & Findlater (2020). Use of intelligent voice assistants by older adults with low technology use.
   - `L-014` Knowles & Hanson (2018). Older adults' deployment of 'distrust'.
