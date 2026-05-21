@@ -20,6 +20,7 @@ import json
 import sys
 from pathlib import Path
 
+from pipeline import captions as captions_mod
 from pipeline import compositor as compositor_mod
 from pipeline import run_episode as run_episode_mod
 from pipeline import tts as tts_mod
@@ -56,6 +57,27 @@ def cmd_tts(args: argparse.Namespace) -> int:
     print(f"duration: {result.duration_seconds:.2f}s")
     if result.integrated_lufs is not None:
         print(f"loudness: {result.integrated_lufs:.2f} LUFS, peak {result.true_peak_dbtp:.2f} dBTP")
+    return 0
+
+
+def cmd_captions(args: argparse.Namespace) -> int:
+    script_path = Path(args.script).resolve()
+    voice_manifest = Path(args.voice_manifest).resolve()
+    if not script_path.is_file():
+        print(f"error: script not found: {script_path}", file=sys.stderr)
+        return 2
+    if not voice_manifest.is_file():
+        print(f"error: voice manifest not found: {voice_manifest}", file=sys.stderr)
+        return 2
+    out_dir = script_path.parent
+    result = captions_mod.generate(script_path, voice_manifest, out_dir)
+    print(f"srt:   {result.srt_path}")
+    print(f"vtt:   {result.vtt_path}")
+    print(f"cues:  {len(result.cues)}")
+    print(f"FK grade: {result.flesch_kincaid_grade}")
+    if result.over_grade_limit:
+        print(f"WARNING: FK grade exceeds {captions_mod.FK_GRADE_LIMIT}", file=sys.stderr)
+        return 1
     return 0
 
 
@@ -124,6 +146,11 @@ def build_parser() -> argparse.ArgumentParser:
     t.add_argument("--pitch", default=tts_mod.DEFAULT_PITCH)
     t.set_defaults(func=cmd_tts)
 
+    c = sub.add_parser("captions", help="generate SRT/VTT captions from script + voice manifest")
+    c.add_argument("script", help="path to script.md")
+    c.add_argument("voice_manifest", help="path to voice.json from pipeline.tts")
+    c.set_defaults(func=cmd_captions)
+
     co = sub.add_parser("composite", help="render episode.mp4 from script + voice + captions")
     co.add_argument("script", help="path to script.md")
     co.add_argument("--voice", required=True, help="path to voice.wav from pipeline.tts")
@@ -149,9 +176,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
     re.set_defaults(func=cmd_run_episode)
 
-    for name in ("captions",):
-        s = sub.add_parser(name, help=f"{name} (stubbed until pipeline/captions PR merges)")
-        s.set_defaults(func=_not_implemented(name))
 
     return p
 
