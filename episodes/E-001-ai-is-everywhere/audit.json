@@ -1,0 +1,171 @@
+{
+  "script_id": "E-001",
+  "contract_version": "1.0.0-draft",
+  "audited_at": "2026-05-21T20:03:36+00:00",
+  "summary": {
+    "deterministic": {
+      "pass": 19,
+      "fail": 0
+    },
+    "agent": {
+      "pass": 0,
+      "fail": 0,
+      "unsure": 0
+    }
+  },
+  "checks": [
+    {
+      "id": "A-1.1",
+      "clause": "C-1",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "front matter parsed and has id + beats",
+      "line_numbers": []
+    },
+    {
+      "id": "A-1.2",
+      "clause": "C-3.4",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "all eight beats present",
+      "line_numbers": []
+    },
+    {
+      "id": "A-1.3",
+      "clause": "C-3.4",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "walkthrough has 4 steps",
+      "line_numbers": []
+    },
+    {
+      "id": "A-3.1",
+      "clause": "C-3.2",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "computed wpm = 106.8 (limit 120)",
+      "line_numbers": []
+    },
+    {
+      "id": "A-3.2",
+      "clause": "C-4.11",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "overall wpm = 106.8; window check uses uniform-rate proxy (refined after TTS timing pass)",
+      "line_numbers": []
+    },
+    {
+      "id": "A-3.4",
+      "clause": "C-3.4",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "beat order: ['hook', 'acknowledge', 'why', 'show', 'walkthrough', 'recover', 'recap', 'outro']",
+      "line_numbers": []
+    },
+    {
+      "id": "A-3.5",
+      "clause": "C-3.4",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "recap names a viewer-attributable win",
+      "line_numbers": []
+    },
+    {
+      "id": "A-3.6",
+      "clause": "C-8.2",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "not an ai_episode; recovery substance not required",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.1",
+      "clause": "C-4.1",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.2",
+      "clause": "C-4.2",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.3",
+      "clause": "C-4.3",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.4",
+      "clause": "C-4.4",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.5",
+      "clause": "C-4.5",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.6",
+      "clause": "C-4.6",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-4.12",
+      "clause": "C-4.12",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "clean",
+      "line_numbers": []
+    },
+    {
+      "id": "A-9.1",
+      "clause": "C-9.1",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "mynaani mentions = 0",
+      "line_numbers": []
+    },
+    {
+      "id": "A-9.2",
+      "clause": "C-9.2",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "mention sits in outro",
+      "line_numbers": []
+    },
+    {
+      "id": "A-9.5",
+      "clause": "C-9.3",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "'patented' hits = 0, 'patent-pending' hits = 0",
+      "line_numbers": []
+    },
+    {
+      "id": "A-9.6",
+      "clause": "C-9.4",
+      "kind": "deterministic",
+      "status": "pass",
+      "evidence": "subscribe full = 1, in outro = 1",
+      "line_numbers": []
+    }
+  ],
+  "verdict": "pass"
+}
