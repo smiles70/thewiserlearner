@@ -21,7 +21,9 @@ import sys
 from pathlib import Path
 
 from pipeline import compositor as compositor_mod
+from pipeline import run_episode as run_episode_mod
 from pipeline import tts as tts_mod
+from pipeline import youtube as youtube_mod
 from pipeline.audit import audit_script, write_audit_report
 
 
@@ -74,6 +76,30 @@ def cmd_composite(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_publish(args: argparse.Namespace) -> int:
+    script_path = Path(args.script).resolve()
+    if not script_path.is_file():
+        print(f"error: script not found: {script_path}", file=sys.stderr)
+        return 2
+    out_dir = script_path.parent
+    video = Path(args.video) if args.video else out_dir / "episode.mp4"
+    meta = Path(args.meta) if args.meta else out_dir / "meta.yaml"
+    thumb = Path(args.thumbnail) if args.thumbnail else None
+    if not video.is_file():
+        print(f"error: video not found: {video}", file=sys.stderr)
+        return 2
+    if not meta.is_file():
+        print(f"error: meta not found: {meta}", file=sys.stderr)
+        return 2
+    result = youtube_mod.publish(video, meta, thumbnail_path=thumb)
+    print(f"published: {result.url}  ({result.privacy_status})")
+    return 0
+
+
+def cmd_run_episode(args: argparse.Namespace) -> int:
+    return run_episode_mod.run(Path(args.script).resolve(), from_stage=args.from_stage)
+
+
 def _not_implemented(name: str):
     def _run(_args: argparse.Namespace) -> int:
         print(f"`{name}` is stubbed in v0.1.0; arrives in a later part.", file=sys.stderr)
@@ -104,8 +130,27 @@ def build_parser() -> argparse.ArgumentParser:
     co.add_argument("--captions", default=None, help="optional path to captions.srt")
     co.set_defaults(func=cmd_composite)
 
-    for name in ("captions", "publish"):
-        s = sub.add_parser(name, help=f"{name} (stubbed in v0.1.0)")
+    pu = sub.add_parser("publish", help="upload episode.mp4 to YouTube")
+    pu.add_argument("script", help="path to script.md")
+    pu.add_argument("--video", default=None, help="path to episode.mp4 (default: next to script)")
+    pu.add_argument("--meta", default=None, help="path to meta.yaml (default: next to script)")
+    pu.add_argument("--thumbnail", default=None, help="optional path to thumbnail PNG")
+    pu.set_defaults(func=cmd_publish)
+
+    re = sub.add_parser(
+        "run", help="run the full pipeline end-to-end (audit -> tts -> captions -> composite)"
+    )
+    re.add_argument("script", help="path to script.md")
+    re.add_argument(
+        "--from-stage",
+        choices=run_episode_mod.STAGES,
+        default="audit",
+        help="resume from this stage",
+    )
+    re.set_defaults(func=cmd_run_episode)
+
+    for name in ("captions",):
+        s = sub.add_parser(name, help=f"{name} (stubbed until pipeline/captions PR merges)")
         s.set_defaults(func=_not_implemented(name))
 
     return p
