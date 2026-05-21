@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Geragogy Contract v1.0.0-draft (Part 3).** `contract/CONTRACT.md` and `contract/audit-rubric.md`. Eleven sections govern audience, editorial posture, script structure & pacing, forbidden patterns, voice & audio, visual & display, captions, AI/Claude content rules, CTAs, risk/safety, and compliance. Every clause is library-cited.
+- **Maintenance items M-002, M-003, M-004** opened in `docs/maintenance.md` (patent-pending check, visual-spec tightening from licensed PDFs, voice character re-evaluation).
 - **Pipeline scaffold v0.1.0 (Part 5).** Working contract auditor plus interface stubs for the rest of the pipeline:
   - `pipeline/audit.py` — deterministic checks for clauses C-1, C-3, C-4, C-9. 11 unit tests pass.
   - `pipeline/data/forbidden_patterns.yaml` — canonical machine-readable forbidden-phrase list (mirror of `contract/audit-rubric.md` §C-4).
