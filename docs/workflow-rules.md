@@ -62,3 +62,22 @@ and produce higher review quality (see
 [Propelcode 2024 study](https://www.propelcode.ai/blog/pr-size-impact-code-review-quality-data-study)
 and [BSSW.io — Pull Request Size Matters](https://bssw.io/items/pull-request-size-matters)).
 Larger logical units are split into a stacked series of PRs.
+
+## Rule 7 — Right-sized review for the change class
+
+Not every change deserves the same ceremony. Branch protection is deferred (see
+[`docs/maintenance.md`](./maintenance.md) M-001), so this rule governs by
+convention.
+
+| Change class                                            | Workflow                                                                                                            |
+|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| **Library entries** (`library/L-*.md`, `library/INDEX.md`, batch `CHANGELOG.md` lines) | Commit **directly to `main`** in batches. Each batch is a single commit; the commit message lists every L-id added. Triple-verification is recorded in the entry itself. |
+| **Documentation only** (`README.md`, `docs/**` typo/wording) | Commit directly to `main`.                                                                                          |
+| **Contract changes** (`contract/**`)                    | **Pull request required.** Must cite at least one library entry per material clause changed.                        |
+| **Pipeline code, CI, tests, dependencies**              | **Pull request required.** Local `ruff format --check`, `ruff check`, and `pytest` must pass before push.           |
+| **Episode scripts and assets** (`episodes/**`)          | **Pull request required.** Contract-compliance audit must pass.                                                     |
+
+Rationale: library entries are pure evidence records that cannot affect runtime
+behaviour. Their review is the triple-verification embedded in the entry itself,
+not a second human gate. Code, contract, and content can break things and stay
+under PR discipline.
