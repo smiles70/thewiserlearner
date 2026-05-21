@@ -47,8 +47,20 @@ canonical record of a single source. Scripts cite entries by ID (e.g. `[L-007]`)
 | [L-011](./L-011-mitzner-2010-older-adults-talk-technology.md) | Mitzner et al. (2010). Older adults talk technology. *Computers in Human Behavior*, 26(6), 1710–1721. DOI [10.1016/j.chb.2010.06.020](https://doi.org/10.1016/j.chb.2010.06.020). | attitudes, qualitative |
 | [L-012](./L-012-hauk-2018-meta-analysis-age-technology-acceptance.md) | Hauk, Hüffmeier & Krumm (2018). Meta-analysis on age and technology acceptance. *Computers in Human Behavior*, 84, 304–319. DOI [10.1016/j.chb.2018.01.020](https://doi.org/10.1016/j.chb.2018.01.020). | meta-analysis, TAM/UTAUT |
 
-### Pending batches
+### Batch 04 — Digital interaction and older adults (Part 2)
 
-- Batch 04 — Digital interaction and older adults (Loos, Fernández-Ardèvol, Sawchuk, Rosales)
-- Batch 05 — Accessibility for older adults (WCAG 2.2, Atkinson Hyperlegible evidence base)
-- Batch 06 — AI literacy and older adults (most recent, smallest evidence base)
+| ID | Citation | Themes |
+|---|---|---|
+| [L-013](./L-013-pradhan-2020-voice-assistants-older-adults-low-tech.md) | Pradhan, Lazar & Findlater (2020). Use of intelligent voice assistants by older adults with low technology use. *ACM TOCHI*, 27(4), 1–27. DOI [10.1145/3373759](https://doi.org/10.1145/3373759). | voice assistants, AI interaction |
+| [L-014](./L-014-knowles-hanson-2018-older-adults-distrust.md) | Knowles & Hanson (2018). Older adults' deployment of 'distrust'. *ACM TOCHI*, 25(4), 1–25. DOI [10.1145/3196490](https://doi.org/10.1145/3196490). | trust, agency, editorial posture |
+| [L-015](./L-015-beneito-montagut-2022-emerging-digital-inequalities-smartphones.md) | Beneito-Montagut, Rosales & Fernández-Ardèvol (2022). Emerging Digital Inequalities. *Social Media + Society*, 8(4). DOI [10.1177/20563051221138756](https://doi.org/10.1177/20563051221138756). | smartphones, heterogeneity |
+| [L-016](./L-016-chen-2021-barriers-voice-assistants-healthcare-older-adults.md) | Chen et al. (2021). Barriers and design opportunities for voice assistants. *ASSETS '21*. DOI [10.1145/3441852.3471218](https://doi.org/10.1145/3441852.3471218). | voice assistants, design barriers |
+
+## Status: sufficient for Part 3
+
+Sixteen triple-verified entries provide the empirical warrant the Geragogy
+Contract requires to govern script and video production. Additional batches
+(audio/voice production, multimedia instruction, accessibility floor) will
+expand the spec-level precision of the contract but are **not** prerequisites
+for drafting it. Part 3 (Contract) begins next; subsequent library additions
+land as needs surface during scripting.

@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Library batch 04 — Digital interaction and older adults (Part 2).** Four triple-verified entries:
+  - `L-013` Pradhan, Lazar & Findlater (2020). Use of intelligent voice assistants by older adults with low technology use.
+  - `L-014` Knowles & Hanson (2018). Older adults' deployment of 'distrust'.
+  - `L-015` Beneito-Montagut, Rosales & Fernández-Ardèvol (2022). Emerging Digital Inequalities.
+  - `L-016` Chen et al. (2021). Barriers and design opportunities for voice assistants.
+- **Workflow Rule 7** — right-sized review by change class. Library entries and pure-docs changes commit directly to `main`; contract, code, CI, and content remain under PR discipline.
+- **Library status note.** Sixteen entries are sufficient warrant for drafting the Geragogy Contract (Part 3). Further batches are deferred until scripting surfaces specific spec-level needs.
 - **Library batch 03 — Technology acceptance for older adults (Part 2).** Four triple-verified entries:
   - `L-009` Renaud & van Biljon (2008). Predicting technology acceptance and adoption by the elderly (STAM).
   - `L-010` Chen & Chan (2014). Gerontechnology acceptance: STAM empirically validated.
