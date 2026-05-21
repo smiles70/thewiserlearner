@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Library batch 01 — Foundations (Part 2).** Three triple-verified entries:
+  - `L-001` Knowles, Holton III, Swanson & Robinson (2020). *The Adult Learner* (9th ed.).
+  - `L-002` Baltes (1997). On the incomplete architecture of human ontogeny (SOC).
+  - `L-003` Formosa (2014). Lifelong Learning in Later Life.
+- `library/INDEX.md` populated with batch 01 and a roadmap of pending batches 02–06.
 - Initial enterprise-grade scaffold.
 - README, BUSL-1.1 LICENSE, contributing/security/code-of-conduct policies.
 - `pyproject.toml` with ruff/pytest/coverage config.
