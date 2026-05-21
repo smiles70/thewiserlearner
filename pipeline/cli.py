@@ -20,6 +20,7 @@ import json
 import sys
 from pathlib import Path
 
+from pipeline import compositor as compositor_mod
 from pipeline import tts as tts_mod
 from pipeline.audit import audit_script, write_audit_report
 
@@ -56,6 +57,23 @@ def cmd_tts(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_composite(args: argparse.Namespace) -> int:
+    script_path = Path(args.script).resolve()
+    voice_path = Path(args.voice).resolve()
+    captions_srt = Path(args.captions).resolve() if args.captions else None
+    if not script_path.is_file() or not voice_path.is_file():
+        print("error: script and voice are required", file=sys.stderr)
+        return 2
+    if captions_srt is not None and not captions_srt.is_file():
+        print(f"error: captions not found: {captions_srt}", file=sys.stderr)
+        return 2
+    out_dir = script_path.parent
+    result = compositor_mod.composite(voice_path, captions_srt, script_path, out_dir)
+    print(f"video:    {result.video_path}")
+    print(f"duration: {result.duration_seconds:.2f}s")
+    return 0
+
+
 def _not_implemented(name: str):
     def _run(_args: argparse.Namespace) -> int:
         print(f"`{name}` is stubbed in v0.1.0; arrives in a later part.", file=sys.stderr)
@@ -80,7 +98,13 @@ def build_parser() -> argparse.ArgumentParser:
     t.add_argument("--pitch", default=tts_mod.DEFAULT_PITCH)
     t.set_defaults(func=cmd_tts)
 
-    for name in ("captions", "composite", "publish"):
+    co = sub.add_parser("composite", help="render episode.mp4 from script + voice + captions")
+    co.add_argument("script", help="path to script.md")
+    co.add_argument("--voice", required=True, help="path to voice.wav from pipeline.tts")
+    co.add_argument("--captions", default=None, help="optional path to captions.srt")
+    co.set_defaults(func=cmd_composite)
+
+    for name in ("captions", "publish"):
         s = sub.add_parser(name, help=f"{name} (stubbed in v0.1.0)")
         s.set_defaults(func=_not_implemented(name))
 
