@@ -1,0 +1,121 @@
+format: 1920x1080
+fps: 25
+visual_theme:
+  palette: warm-neutral-morning-light
+  mood: calm, dignified, quiet
+  faceless: true
+  no_text_in_image: true
+beats:
+- beat: hook
+  image_prompt: Calm domestic scene, hook beat, no text, no faces.
+  image_path: null
+  title: "AI Is Everywhere Now \u2014 Why It Matters at Any Age"
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 41.112
+  ken_burns: true
+  steps: []
+- beat: acknowledge
+  image_prompt: Calm domestic scene, acknowledge beat, no text, no faces.
+  image_path: null
+  title: What you may be wondering.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 40.00800000000001
+  ken_burns: true
+  steps: []
+- beat: why
+  image_prompt: Calm domestic scene, why beat, no text, no faces.
+  image_path: null
+  title: Why this matters.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 25.104
+  ken_burns: true
+  steps: []
+- beat: show
+  image_prompt: Calm domestic scene, show beat, no text, no faces.
+  image_path: null
+  title: Watch it once.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 34.272000000000006
+  ken_burns: true
+  steps: []
+- beat: walkthrough
+  image_prompt: Calm domestic scene, walkthrough beat, no text, no faces.
+  image_path: null
+  title: Step by step.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 81.05999999999995
+  ken_burns: true
+  steps:
+  - index: 1
+    text: Part one. The voice assistants. These live in speakers and phones. Siri
+      on Apple. Alexa on Amazon. Google Assistant. You speak, they answer.
+    prior_anchor: null
+    dwell_seconds: 20.264999999999986
+  - index: 2
+    text: Part two. The chat assistants. These are written conversations. ChatGPT.
+      Claude. Gemini. You type, they reply, you can keep talking. This is where this
+      channel will spend most of its time.
+    prior_anchor: 1. Part one
+    dwell_seconds: 20.264999999999986
+  - index: 3
+    text: Part three. The picture and photo helpers. These improve photos or generate
+      new images. Many are inside the camera and photo apps you already have.
+    prior_anchor: 2. Part two
+    dwell_seconds: 20.264999999999986
+  - index: 4
+    text: Part four. The AI inside the apps you already use. Your bank. Your search
+      engine. Your email. Often it is there without being announced.
+    prior_anchor: 3. Part three
+    dwell_seconds: 20.264999999999986
+- beat: recover
+  image_prompt: Calm domestic scene, recover beat, no text, no faces.
+  image_path: null
+  title: If something goes wrong.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 28.151999999999987
+  ken_burns: true
+  steps: []
+- beat: recap
+  image_prompt: Calm domestic scene, recap beat, no text, no faces.
+  image_path: null
+  title: What you have just seen.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 23.592000000000013
+  ken_burns: true
+  steps: []
+- beat: outro
+  image_prompt: Calm domestic scene, outro beat, no text, no faces.
+  image_path: null
+  title: Thank you for being here.
+  subtitle: null
+  title_font_px: 80
+  body_font_px: 56
+  contrast_ratio: 15.0
+  dwell_seconds: 18.648000000000025
+  ken_burns: true
+  steps: []
+transitions:
+  default_ms: 600
+  min_ms: 400
+  max_ms: 800

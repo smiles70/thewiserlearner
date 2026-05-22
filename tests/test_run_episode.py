@@ -77,4 +77,4 @@ def test_resume_from_composite_requires_existing_voice_wav(script, capsys):
 
 
 def test_stages_constant_is_canonical_order():
-    assert run_episode.STAGES == ("audit", "tts", "captions", "composite")
+    assert run_episode.STAGES == ("audit", "tts", "captions", "visuals", "composite")

@@ -1,0 +1,15 @@
+id: E-XXX-replace-me
+title: A short, plain title
+topic: |
+  Two or three sentences describing what this episode covers and why an
+  older adult would benefit from watching it.
+target_capability: |
+  One sentence describing the single thing the listener should be able to
+  do (or notice, or trust) after watching.
+target_runtime_seconds: 300
+level: intro
+library_refs:
+  - L-001-knowles-2020-the-adult-learner
+  - L-007-czaja-2019-designing-for-older-adults-3e
+notes: |
+  Optional editorial notes for the scripter.

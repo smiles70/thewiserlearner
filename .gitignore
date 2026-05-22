@@ -34,10 +34,22 @@ service-account*.json
 # Episode build artifacts (large binaries should not be committed)
 episodes/*/voice.wav
 episodes/*/voice.mp3
+episodes/*/voice.json
 episodes/*/captions.srt
+episodes/*/captions.vtt
+episodes/*/captions.json
 episodes/*/broll/
+episodes/*/segments/
+episodes/*/visuals/
 episodes/*/final.mp4
+episodes/*/episode.mp4
+episodes/*/episode.*.mp4
 episodes/*/thumb.png
+episodes/*/thumbnail.png
+episodes/*/title_card.png
+
+# Spike / one-off outputs
+scripts/spike_output.mp4
 
 # Analytics (SQLite is committed weekly via workflow, not on each change)
 analytics/perf.sqlite-journal

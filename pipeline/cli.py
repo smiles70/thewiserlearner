@@ -23,7 +23,9 @@ from pathlib import Path
 from pipeline import captions as captions_mod
 from pipeline import compositor as compositor_mod
 from pipeline import run_episode as run_episode_mod
+from pipeline import storyboard as storyboard_mod
 from pipeline import tts as tts_mod
+from pipeline import visuals as visuals_mod
 from pipeline import youtube as youtube_mod
 from pipeline.audit import audit_script, write_audit_report
 
@@ -118,6 +120,35 @@ def cmd_publish(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_visuals(args: argparse.Namespace) -> int:
+    script_path = Path(args.script).resolve()
+    voice_manifest = Path(args.voice_manifest).resolve()
+    if not script_path.is_file():
+        print(f"error: script not found: {script_path}", file=sys.stderr)
+        return 2
+    if not voice_manifest.is_file():
+        print(f"error: voice manifest not found: {voice_manifest}", file=sys.stderr)
+        return 2
+    out_dir = script_path.parent
+    comp_path = out_dir / "composition.yaml"
+    if comp_path.is_file():
+        comp = storyboard_mod.load_composition(comp_path)
+        print(f"composition: {comp_path} (loaded)")
+    else:
+        comp = storyboard_mod.default_composition(script_path, voice_manifest)
+        import yaml as _yaml
+
+        comp_path.write_text(
+            _yaml.safe_dump(comp.model_dump(mode="json"), sort_keys=False),
+            encoding="utf-8",
+        )
+        print(f"composition: {comp_path} (default builder)")
+    results = visuals_mod.generate_all(comp, out_dir)
+    for name, vr in results.items():
+        print(f"  {name:14} {vr.image_path}")
+    return 0
+
+
 def cmd_run_episode(args: argparse.Namespace) -> int:
     return run_episode_mod.run(Path(args.script).resolve(), from_stage=args.from_stage)
 
@@ -151,6 +182,11 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("voice_manifest", help="path to voice.json from pipeline.tts")
     c.set_defaults(func=cmd_captions)
 
+    v = sub.add_parser("visuals", help="render per-beat backgrounds from composition.yaml")
+    v.add_argument("script", help="path to script.md")
+    v.add_argument("voice_manifest", help="path to voice.json from pipeline.tts")
+    v.set_defaults(func=cmd_visuals)
+
     co = sub.add_parser("composite", help="render episode.mp4 from script + voice + captions")
     co.add_argument("script", help="path to script.md")
     co.add_argument("--voice", required=True, help="path to voice.wav from pipeline.tts")
@@ -175,7 +211,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="resume from this stage",
     )
     re.set_defaults(func=cmd_run_episode)
-
 
     return p
 

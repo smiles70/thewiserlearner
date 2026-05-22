@@ -17,46 +17,41 @@ library_refs:
 
 # Visual director agent
 
-You build the composition manifest for one episode.
+You build the composition manifest for one episode. The manifest is a single
+`composition.yaml` file that is consumed by `pipeline/compositor.py` and
+validated by `pipeline.storyboard.load_composition`.
 
-## Manifest schema
+## Operating procedure
 
-```yaml
-format: 1920x1080
-fps: 25
-beats:
-  - beat: hook
-    slides:
-      - kind: title
-        text: "..."
-        font_px: 72
-        contrast_ratio: 10.5
-        dwell_seconds: 4.0
-      - kind: broll
-        clip: assets/broll/hands-tea.mp4
-        duration_seconds: 8.0
-  - beat: walkthrough
-    slides:
-      - kind: step
-        index: 1
-        text: "Open the Claude app."
-        font_px: 56
-        contrast_ratio: 11.0
-        dwell_seconds: 4.5
-icons:
-  - id: claude-mark
-    label: "Claude"
-transitions:
-  default_ms: 600
-```
+For every episode:
 
-## Operating principles
+1. Load `contract/CONTRACT.md` (full text, supreme authority).
+2. Load the script at `episodes/E-NNN-*/script.md`.
+3. Load `episodes/E-NNN-*/voice.json` (per-beat timings).
+4. Invoke the `visual-director` skill in `skills/visual-director/SKILL.md`,
+   which contains the full schema, hard rules, two worked examples, and a
+   self-check checklist.
+5. Write the resulting YAML to `episodes/E-NNN-*/composition.yaml`.
+6. Verify locally with:
+   `python -c "from pipeline.storyboard import load_composition; load_composition('<path>')"`
+   The call must complete without raising `CompositionError`.
 
-1. Body text font_px ≥ 48 at 1080p. Headings ≥ 72.
-2. Every contrast_ratio is computed (not estimated) and ≥ 7:1.
-3. Every transition is between 400 and 800 ms.
-4. Every step's dwell_seconds ≥ max(3, words × 0.4 + 1).
-5. Every icon entry has a paired label.
-6. No b-roll clip contains rapid cuts, parallax, or auto-zoom.
-7. During walkthrough beats, the current step number and the previous step's
-   anchor are both visible.
+## Hard rules (the schema enforces these — do not violate them)
+
+1. Beat names are the eight canonical names in `pipeline.audit.REQUIRED_BEATS`,
+   in order: `hook, acknowledge, why, show, walkthrough, recover, recap, outro`.
+2. `walkthrough.steps` has ≥ 2 entries; every step beyond the first carries a
+   `prior_anchor` (C-6.8). No other beat may declare a `steps:` block.
+3. `title_font_px ≥ 72`; `body_font_px ≥ 48` (C-6.2).
+4. `contrast_ratio ≥ 7.0` (C-6.3).
+5. `dwell_seconds ≥ 3.0` for every beat and every step (C-6.6).
+6. `transitions.default_ms ∈ [400, 800]` (C-6.5).
+7. No human faces in any `image_prompt` (C-6.9, pilots are faceless).
+8. No text, captions, typography, or brand logos in any `image_prompt`.
+   The compositor overlays all on-screen text; brand marks require paired
+   text labels (C-6.7) and are simpler to omit entirely.
+9. No fear/urgency imagery (C-2.5, C-4.5).
+
+The full schema, prompt-engineering guidance, and two complete worked
+examples (one non-AI episode, one AI episode) live in
+[`skills/visual-director/SKILL.md`](../skills/visual-director/SKILL.md).
