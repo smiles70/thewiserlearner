@@ -22,7 +22,7 @@ edge-tts>=6.1,<7
 faster-whisper>=1.2.1,<2
 
 # Media
-Pillow>=10.3,<11
+Pillow>=12.2.0,<13
 ffmpeg-python>=0.2,<0.3
 
 # YouTube
