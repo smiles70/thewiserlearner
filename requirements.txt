@@ -2,7 +2,7 @@
 # Pinned to known-good versions as of 2026-05.
 
 # Core
-httpx>=0.27,<0.28
+httpx>=0.28.1,<0.29
 pydantic>=2.7,<3
 python-dotenv>=1.0,<2
 PyYAML>=6.0.3,<7
